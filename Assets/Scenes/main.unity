@@ -548,6 +548,7 @@ MonoBehaviour:
   Ball: {fileID: 177912862}
   ScoreText: {fileID: 188020406}
   GameOverText: {fileID: 474497238}
+  m_Points: 0
 --- !u!1 &455529321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1065,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Manager: {fileID: 450625942}
+  BestScoreText: {fileID: 2078529056}
+  nameBestPlayer: 
+  bestScore: 0
 --- !u!1 &1288645155
 GameObject:
   m_ObjectHideFlags: 0

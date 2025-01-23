@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.IO;
+
 
 public class MainManager : MonoBehaviour
 {
@@ -11,19 +11,17 @@ public class MainManager : MonoBehaviour
     public Rigidbody Ball;
 
     public Text ScoreText;
-    public Text BestScoreText;
+    
     
 
     public GameObject GameOverText;
     
     private bool m_Started = false;
-    private int m_Points;
+    public int m_Points;
     
     private bool m_GameOver = false;
 
-    //Best player data
-    public string nameBestPlayer = null;
-    public int bestScore;
+    
 
     
 
@@ -31,11 +29,6 @@ public class MainManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //We load the best score data, if there is something, then update
-        LoadBestScore();
-        if (nameBestPlayer != null)
-        {}
-
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
@@ -89,28 +82,5 @@ public class MainManager : MonoBehaviour
     }
 
 
-    [System.Serializable]
-    class SaveData
-    {
-        public string name;
-        public int score;
-    }
-
-    private void LoadBestScore()
-    {
-        string path = Application.persistentDataPath + "/savefile.json";
-        if (File.Exists(path))
-        {
-        string json = File.ReadAllText(path);
-        SaveData data = JsonUtility.FromJson<SaveData>(json);
-
-        nameBestPlayer = data.name;
-        bestScore = data.score;
-        }
-    }
-
-    private void SaveBestScore()
-    {
     
-    }
 }
